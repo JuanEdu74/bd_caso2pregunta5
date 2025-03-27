@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <header class="bg-danger text-white py-1 px-3 d-flex justify-content-between align-items-center gap-1">
-        
-        <!-- Logo + Texto -->
-        <div class="d-flex align-items-center gap-2 me-5">
-            <img src="images/encabezado/logo.png" alt="Chifería Deliciosa Logo" style="height: 50px;">
-            <h1 class="fs-5 m-0 text-nowrap">Bienvenidos a Chifería Arellano</h1>
-        </div>
+
+    <!-- Encabezado -->
+
+    <header class="bg-danger text-white py-2 px-3">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center container">
+            <!-- Logo y Título -->
+            <div class="d-flex align-items-center gap-2">
+                <img src="images/encabezado/logo.png" alt="Chifería Deliciosa Logo" style="height: 50px;">
+                <h1 class="fs-5 m-0 text-nowrap">Bienvenidos a Chifería Arellano</h1>
+            </div>
     
-        <!-- Navegación -->
-        <nav class="navbar navbar-expand-md">
+            <!-- Botón responsive -->
             <button class="navbar-toggler text-white border-white p-1" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
                 ☰
             </button>
-            <div class="collapse navbar-collapse" id="menuNav">
-                <ul class="navbar-nav gap-2">
+    
+            <!-- Menú principal -->
+            <div class="collapse navbar-collapse justify-content-center" id="menuNav">
+                <ul class="navbar-nav gap-3">
                     <li class="nav-item">
                         <a href="#menu" class="nav-link text-white fs-6">Menú</a>
                     </li>
@@ -29,33 +33,66 @@
                         <a href="#locales" class="nav-link text-white fs-6">Locales</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contacto" class="nav-link text-white fs-6">Contacto</a>
+                        <a href="#nosotros" class="nav-link text-white fs-6">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle text-white fs-6" id="submenuContacto" role="button" data-bs-toggle="dropdown">
+                            Contacto
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#telefono">Teléfono</a></li>
+                            <li><a class="dropdown-item" href="#email">Correo</a></li>
+                            <li><a class="dropdown-item" href="#whatsapp">WhatsApp</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
+    
+            <!-- Opciones adicionales (Iniciar Sesión y Carrito) -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
+                    <i class="bi bi-person"></i> <span class="fw-bold">INICIAR SESIÓN</span>
+                </a>
+                <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
+                    <i class="bi bi-cart"></i> <span>S/ 0.00</span>
+                </a>
+            </div>
         </nav>
-    
-        <!-- Extras como contacto e iconos -->
-        <div class="d-flex align-items-center gap-3">
-            <a href="tel:016128000" class="text-white text-decoration-none d-flex align-items-center gap-1">
-                <i class="bi bi-telephone"></i> <span class="fw-bold">01 - 234 - 5678</span>
-            </a>
-            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
-                <i class="bi bi-person"></i> <span class="fw-bold">INICIAR SESIÓN</span>
-            </a>
-            <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
-                <i class="bi bi-cart"></i> <span>S/ 0.00</span>
-            </a>
-        </div>
     </header>
-        
-    
-      
+
+    <!-- Fin Encabezado -->
+
+    <!-- Ruleta -->
 
     <section id="hero" class="text-center py-5 bg-light">
-        <h2>Disfruta los mejores platos de la chifa</h2>
-        <p>Ingredientes frescos, recetas auténticas y un toque especial en cada platillo.</p>
+        <div id="carouselHero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-description="Chaufa: Clásico arroz frito chifa con huevo, sillao y proteínas.">
+                    <img src="images/carouselhero/ch1.jpg" class="d-block w-100" alt="Plato chifa 1">
+                </div>
+                <div class="carousel-item" data-description="Chijaukai: Pollo frito con maicena y salsa de ostión.">
+                    <img src="images/carouselhero/ch2.jpg" class="d-block w-100" alt="Plato chifa 2">
+                </div>
+                <div class="carousel-item" data-description="Limonkay: Pollo empanizado con salsa agridulce de limón.">
+                    <img src="images/carouselhero/ch3.jpg" class="d-block w-100" alt="Plato chifa 3">
+                </div>
+            </div>
+            <!-- Botones de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    
+        <!-- Descripción dinámica -->
+        <div id="carouselDescription" class="py-3 bg-white text-dark fw-bold">
+            Chaufa: Clásico arroz frito chifa con huevo, sillao y proteínas.
+        </div>
     </section>
+
+    
 
     <section id="menu" class="container my-5">
         <h2 class="text-center">Nuestro Menú</h2>
@@ -86,6 +123,9 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Fin Ruleta -->
 
     <section id="promo" class="text-center bg-warning py-4">
         <h2>Promociones Especiales</h2>
@@ -118,5 +158,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/carousel.js"></script>
+
+
 </body>
 </html>
