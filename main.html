@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chifería Arellano - El Mejor Sabor Chino-Peruano</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/design.css">
 </head>
 <body>
 
@@ -92,8 +93,6 @@
         </div>
     </section>
 
-    
-
     <section id="menu" class="container my-5">
         <h2 class="text-center">Nuestro Menú</h2>
         <div class="row">
@@ -124,9 +123,78 @@
         </div>
     </section>
 
-    
-    
+
     <!-- Fin Ruleta -->
+
+
+    <section id="menu-carousel" class="container my-5">
+        <h2 class="text-center fw-bold">EXPLORA NUESTRO MENÚ</h2>
+        <div id="menuCarousel" class="carousel slide" data-bs-ride="carousel">
+            
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#menuCarousel" data-bs-slide-to="1"></button>
+            </div>
+    
+            <!-- Contenido del Carrusel -->
+            <div class="carousel-inner text-center">
+                <!-- Primera diapositiva -->
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/cyber.png" class="d-block w-100" alt="Cyber Chinawok">
+                            <p class="menu-title">Cyber Chinawok</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/promociones.png" class="d-block w-100" alt="Promociones">
+                            <p class="menu-title">Promociones</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/combos.png" class="d-block w-100" alt="Combos Personales">
+                            <p class="menu-title">Combos Personales</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/clasicos.png" class="d-block w-100" alt="Clásicos">
+                            <p class="menu-title">Clásicos</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Segunda diapositiva (puedes agregar más elementos aquí si hay más categorías) -->
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/nuevo1.png" class="d-block w-100" alt="Nuevo Platillo 1">
+                            <p class="menu-title">Nuevo Platillo 1</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/nuevo2.png" class="d-block w-100" alt="Nuevo Platillo 2">
+                            <p class="menu-title">Nuevo Platillo 2</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/nuevo3.png" class="d-block w-100" alt="Nuevo Platillo 3">
+                            <p class="menu-title">Nuevo Platillo 3</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="images/menu_carousel/nuevo4.png" class="d-block w-100" alt="Nuevo Platillo 4">
+                            <p class="menu-title">Nuevo Platillo 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Controles de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#menuCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#menuCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+    
+        </div>
+    </section>
+    
 
     <section id="promo" class="text-center bg-warning py-4">
         <h2>Promociones Especiales</h2>
