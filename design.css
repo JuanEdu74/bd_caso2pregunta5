@@ -10,3 +10,16 @@
     text-align: center;
     margin-top: 10px;
 }
+
+/* Fin del tema de las imagenes */
+
+/* Inicio Promociones Especiales */
+
+.container {
+    max-width: 900px;
+}
+.img-fluid {
+    max-height: 250px;
+}
+
+/* Fin Promociones Especiales */
