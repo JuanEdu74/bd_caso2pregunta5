@@ -6,6 +6,7 @@
     <title>Chifería Arellano - El Mejor Sabor Chino-Peruano</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/design.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -38,28 +39,54 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white fs-6" id="submenuContacto" role="button" data-bs-toggle="dropdown">
-                            Contacto
+                            Delivery
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#telefono">Teléfono</a></li>
-                            <li><a class="dropdown-item" href="#email">Correo</a></li>
-                            <li><a class="dropdown-item" href="#whatsapp">WhatsApp</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="enviarPedidoWhatsApp()">WhatsApp</a></li>
                         </ul>
-                    </li>
+                    </li>                    
                 </ul>
             </div>
     
             <!-- Opciones adicionales (Iniciar Sesión y Carrito) -->
             <div class="d-flex align-items-center gap-3">
+                <!-- Iniciar Sesión -->
                 <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
                     <i class="bi bi-person"></i> <span class="fw-bold">INICIAR SESIÓN</span>
                 </a>
-                <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
-                    <i class="bi bi-cart"></i> <span>S/ 0.00</span>
+            
+                <!-- Carrito de Compras -->
+                <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1" onclick="mostrarCarrito()">
+                    <i class="bi bi-cart"></i> <span id="cart-total">S/ 0.00</span>
                 </a>
-            </div>
+            
+                <!-- Botón para Vaciar Carrito -->
+                <button class="btn btn-danger btn-sm d-flex align-items-center gap-1" onclick="vaciarCarrito()">
+                    <i class="bi bi-trash"></i> Vaciar
+                </button>
+            </div>            
         </nav>
     </header>
+
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="carritoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrito de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="carrito-lista"></ul>
+                    <p id="carrito-total" class="fw-bold text-end">Total: S/ 0.00</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Fin Encabezado -->
 
@@ -129,19 +156,23 @@
                 <div class="carousel-item">
                     <div class="row">
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/nuevo1.png" class="d-block w-100" alt="Nuevo Platillo 1">
+                            <img src="images/menu_carousel/nuevo1.png" class="d-block w-100" alt="Nuevo Platillo 1" 
+                            onclick="confirmarCompra('Chaufa de Mariscos', 27.00)">
                             <p class="menu-title">Chaufa de Mariscos</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/nuevo2.png" class="d-block w-100" alt="Nuevo Platillo 2">
+                            <img src="images/menu_carousel/nuevo2.png" class="d-block w-100" alt="Nuevo Platillo 2" 
+                            onclick="confirmarCompra('Lomo Saltado', 33.90)">
                             <p class="menu-title">Lomo Saltado</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/nuevo3.png" class="d-block w-100" alt="Nuevo Platillo 3">
+                            <img src="images/menu_carousel/nuevo3.png" class="d-block w-100" alt="Nuevo Platillo 3" 
+                                onclick="confirmarCompra('Aeropuerto Tortilla', 18.00)">
                             <p class="menu-title">Aeropuerto Tortilla</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/nuevo4.png" class="d-block w-100" alt="Nuevo Platillo 4">
+                            <img src="images/menu_carousel/nuevo4.png" class="d-block w-100" alt="Nuevo Platillo 4" 
+                                onclick="confirmarCompra('Aeropuerto Clásico', 15.00)">
                             <p class="menu-title">Aeropuerto Clásico</p>
                         </div>
                     </div>
@@ -158,6 +189,51 @@
     
         </div>
     </section>
+
+
+    <!-- Modal de Confirmación de selección de platillos-->
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmación de compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="confirmacion-texto"></p>
+                    <p>¿Estás seguro de que quieres comprar esto?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-success" onclick="comprar()">Sí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Éxito -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">¡Éxito!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="mensaje-exito"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Lista de platillos comprados -->
+    <ul id="carrito-lista"></ul>
 
     <!-- FIN DE EXPLORA NUESTRO MENU -->
     
@@ -196,7 +272,7 @@
                         ★★★★★
                     </p>
                     <blockquote class="blockquote">
-                        <p>"Excelente servicio y productos de calidad. Sin duda volveré a comprar aquí."</p>
+                        <p>"Excelente servicio y platillos de calidad. Sin duda volveré a comprar aquí."</p>
                     </blockquote>
                 </div>
             </div>
@@ -208,7 +284,7 @@
                         ★★★★★
                     </p>
                     <blockquote class="blockquote">
-                        <p>"Atención rápida y personalizada. Muy satisfecha con mi experiencia."</p>
+                        <p>"Atención rápida, personalizada y deliciosa. Muy satisfecha con mi experiencia."</p>
                     </blockquote>
                 </div>
             </div>
@@ -235,7 +311,7 @@
 
     <section id="contacto" class="text-center py-5 bg-light">
         <h2>Contáctanos</h2>
-        <p>Haz tu pedido llamando al <strong>+51 999 888 777</strong> o visitándonos en nuestra dirección.</p>
+        <p>Haz tu pedido llamando al <strong>+51 955 786 062</strong> o visitándonos en nuestra dirección.</p>
     </section>
 
     
@@ -246,6 +322,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/whatsapp.js"></script>
 
 
 </body>
