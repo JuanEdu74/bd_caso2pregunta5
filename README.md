@@ -1,6 +1,12 @@
 # Chifería Arellano
 
-¡Bienvenido a **Chifería Arellano**! Este proyecto es una página web de un restaurante especializado en comida china, donde puedes disfrutar de deliciosos platillos tradicionales y promociones especiales cada día. 
+¡Bienvenido a **Chifería Arellano**! Este proyecto es una página web de un restaurante especializado en comida china, donde puedes disfrutar de deliciosos platillos tradicionales y promociones especiales cada día.
+
+## Enlace a la Página Web
+
+Puedes ver la página en vivo haciendo clic en el siguiente enlace:
+
+[**Chifería Arellano - Página Web**](https://juanedu74.github.io/bd_caso2pregunta5/main.html)
 
 ## Descripción
 
