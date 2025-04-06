@@ -1,31 +1,31 @@
-# Chifería Arellano
+# Libro Virtual de Recetas de Chifería Arellano
 
-¡Bienvenido a **Chifería Arellano**! Este proyecto es una página web de un restaurante especializado en comida china, donde puedes disfrutar de deliciosos platillos tradicionales y promociones especiales cada día.
+¡Bienvenido al **Libro Virtual de Recetas de Chifería Arellano**! Este proyecto es una página web interactiva donde puedes descubrir y explorar las recetas tradicionales más sabrosas de la cocina china, directamente desde las cocinas de **Chifería Arellano**.
 
 ## Enlace a la Página Web
 
-Puedes ver la página en vivo haciendo clic en el siguiente enlace:
+Puedes ver el libro virtual en vivo haciendo clic en el siguiente enlace:
 
-[**Chifería Arellano - Página Web**](https://juanedu74.github.io/bd_caso2pregunta5/main.html)
+[**Libro Virtual de Recetas - Chifería Arellano**](https://juanedu74.github.io/bd_caso2pregunta5/main.html)
 
 ## Descripción
 
-Chifería Arellano es una página web interactiva que permite a los usuarios explorar el menú del restaurante, ver promociones diarias y agregar productos al carrito de compras. La web está diseñada para ser fácil de usar, con un sistema de carrusel para visualizar imágenes de los platillos, así como una sección de promociones especiales que se actualiza según el día de la semana.
+El **Libro Virtual de Recetas de Chifería Arellano** es una página web diseñada para que los usuarios puedan explorar las recetas más emblemáticas de nuestro restaurante. Cada receta está acompañada de imágenes atractivas, instrucciones detalladas y consejos para lograr el sabor auténtico de nuestros platillos.
 
 ### Características principales:
 
-- **Carrusel de Imágenes**: Los usuarios pueden ver imágenes atractivas de los platillos del restaurante.
-- **Promociones Especiales**: Basado en el día de la semana, se muestran descuentos y ofertas especiales, como el 50% de descuento en Chaufa los lunes, o una oferta de acumulación de puntos extra los jueves.
-- **Carrito de Compras**: Los usuarios pueden agregar platillos al carrito, ver el total a pagar y realizar el pedido a través de WhatsApp.
-- **Enlace a WhatsApp**: Una vez que el usuario esté listo para pedir, puede enviar el carrito completo al número de WhatsApp del restaurante, facilitando el proceso de pedido.
+- **Recetas Interactivas**: Los usuarios pueden ver imágenes y descripciones detalladas de cada receta, desde el clásico Chaufa hasta platos especiales de temporada.
+- **Promociones de Recetas**: Según el día de la semana, se ofrecen recetas exclusivas o consejos culinarios para aprovechar ingredientes frescos y promociones especiales.
+- **Recetas Favoritas**: Los usuarios pueden agregar sus recetas favoritas al carrito, guardarlas y acceder a ellas fácilmente en cualquier momento.
+- **Enlace a WhatsApp**: Una vez que el usuario haya seleccionado una receta, puede enviarla al número de WhatsApp del restaurante para consultas o recibir asesoría sobre la preparación de los platillos.
 
 ## Estructura del Proyecto
 
 El proyecto está dividido en varias secciones, cada una con un propósito específico:
 
 - **HTML**: Contiene la estructura de la página (`index.html` y `main.html`).
-- **CSS**: El archivo `design.css` controla el diseño y la apariencia visual de la página, incluyendo el estilo del carrusel y las promociones.
-- **JavaScript**: Los archivos `carousel.js` y `whatsapp.js` gestionan la interacción de la página. El primero maneja el carrusel de imágenes y las descripciones, mientras que el segundo gestiona las funcionalidades del carrito de compras y la integración con WhatsApp.
+- **CSS**: El archivo `design.css` controla el diseño y la apariencia visual de la página, con un estilo limpio y atractivo para presentar las recetas.
+- **JavaScript**: Los archivos `carousel.js` y `whatsapp.js` gestionan la interacción de la página. El primero maneja el carrusel de imágenes y las descripciones de las recetas, mientras que el segundo permite a los usuarios guardar y enviar recetas.
 
 ## Instalación
 
@@ -34,11 +34,11 @@ El proyecto está dividido en varias secciones, cada una con un propósito espec
     git clone https://github.com/tuusuario/BD_CASO2PREGUNTA5.git
     ```
 
-2. Abre el archivo `index.html` en tu navegador para comenzar a ver la página en acción.
+2. Abre el archivo `index.html` en tu navegador para comenzar a explorar el libro virtual de recetas.
 
 ## Contribuciones
 
-Si deseas colaborar en este proyecto, puedes hacer un fork del repositorio y enviar un pull request con tus mejoras. ¡Las contribuciones son bienvenidas!
+Si deseas colaborar en este proyecto, puedes hacer un fork del repositorio y enviar un pull request con tus mejoras o nuevas recetas. ¡Las contribuciones son bienvenidas!
 
 ## Autor
 

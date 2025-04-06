@@ -1,110 +1,69 @@
-let carrito = []; // Array para almacenar los productos
-let platilloTemporal = { nombre: "", precio: 0 };
 
-// Función para actualizar el carrito en la interfaz
-function actualizarCarrito() {
-    let totalCarrito = carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-    document.getElementById("cart-total").textContent = `S/ ${totalCarrito.toFixed(2)}`;
+
+// *INICIO DE NUEVO MODAL PARA PEDIR PEDIDO*
+
+
+// Mostrar el modal al hacer clic en "Comprar Ahora"
+document.getElementById("abrirModal").onclick = function() {
+    $('#pedidoModal').modal('show');  // Abre el modal de Bootstrap
 }
 
-// Función para mostrar el modal de confirmación con el platillo seleccionado
-function confirmarCompra(nombre, precio) {
-    platilloTemporal = { nombre, precio };
-    document.getElementById("confirmacion-texto").textContent = `Estás comprando "${nombre}" por S/ ${precio.toFixed(2)}.`;
-    
-    let modal = new bootstrap.Modal(document.getElementById("confirmModal"));
-    modal.show();
-}
+// Función para WhatsApp
+document.getElementById("whatsappBtn").onclick = function() {
+    const mensaje = "¡Hola! Estoy interesado en comprar el libro virtual de recetas de Chifería Arellano. ¿Podrías proporcionarme más información?";
+    const numeroWhatsApp = "+51955786062";
+    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(urlWhatsApp, "_blank");
+    $('#pedidoModal').modal('hide');  // Cerrar modal después de hacer clic
+};
 
-// Función para agregar el platillo al carrito
-function comprar() {
-    let itemIndex = carrito.findIndex(item => item.nombre === platilloTemporal.nombre);
-    
-    if (itemIndex !== -1) {
-        carrito[itemIndex].cantidad++;
-    } else {
-        carrito.push({ ...platilloTemporal, cantidad: 1 });
-    }
-    
-    actualizarCarrito();
+// Evento de clic en el botón de "Comprar Ahora"
+document.getElementById("pagoEfectivoBtn").onclick = function() {
+    // Datos del pedido
+    const orderData = {
+        product_id: "001",  // ID único del producto
+        amount: 25,  // Precio del libro
+        description: "Libro Virtual de Recetas de Chifería Arellano",  // Descripción del producto
+        currency: "PEN"  // Moneda, en este caso soles (PEN)
+    };
 
-    // Mostrar mensaje de éxito
-    document.getElementById("mensaje-exito").textContent = `"${platilloTemporal.nombre}" ha sido añadido al carrito.`;
-    let successModal = new bootstrap.Modal(document.getElementById("successModal"));
-    successModal.show();
+    // Aquí realizamos la solicitud a PagoEfectivo para generar el CIP (Código de Identificación de Pago)
+    $.ajax({
+        url: "https://api.pagoefectivo.pe/v1/transaction/init",  // URL de la API para generar el CIP
+        type: "POST",
+        data: {
+            merchantId: "TU_MERCHANT_ID",  // Tu ID de comerciante en PagoEfectivo
+            amount: orderData.amount,
+            description: orderData.description,
+            currency: orderData.currency,
+            productId: orderData.product_id,
+        },
+        success: function(response) {
+            if(response.status === "success") {
+                // Si la solicitud es exitosa, obtenemos el CIP
+                const cipCode = response.cipCode;  // Este es el código CIP que el cliente debe pagar
 
-    // Cerrar el modal de confirmación
-    let confirmModal = bootstrap.Modal.getInstance(document.getElementById("confirmModal"));
-    confirmModal.hide();
-}
-
-// Función para mostrar los platillos comprados al hacer clic en el carrito
-function mostrarCarrito() {
-    let listaCarrito = document.getElementById("carrito-lista");
-    let totalGeneral = carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
-    
-    listaCarrito.innerHTML = "";
-
-    if (carrito.length === 0) {
-        listaCarrito.innerHTML = "<li>No hay productos en el carrito.</li>";
-    } else {
-        carrito.forEach(item => {
-            let li = document.createElement("li");
-            li.textContent = `${item.nombre} x${item.cantidad} - S/ ${item.precio.toFixed(2)} c/u | Total: S/ ${(item.precio * item.cantidad).toFixed(2)}`;
-            listaCarrito.appendChild(li);
-        });
-    }
-    
-    document.getElementById("carrito-total").textContent = `Total: S/ ${totalGeneral.toFixed(2)}`;
-
-    let modal = new bootstrap.Modal(document.getElementById("carritoModal"));
-    modal.show();
-}
-
-
-// Función para vaciar el carrito
-function vaciarCarrito() {
-    // Vaciar el array del carrito
-    carrito = [];
-
-    // Actualizar la interfaz
-    actualizarCarrito();
-
-    // Mostrar un mensaje de confirmación
-    let modal = new bootstrap.Modal(document.getElementById("successModal"));
-    document.getElementById("mensaje-exito").textContent = "El carrito ha sido vaciado.";
-    modal.show();
-}
-
-// Función para enviar el pedido a Whatsapp
-function enviarPedidoWhatsApp() {
-    let telefono = "51955786062"; // Número de WhatsApp
-
-    if (carrito.length === 0) {
-        alert("Tu carrito está vacío. Agrega productos antes de enviar el pedido.");
-        return;
-    }
-
-    let mensaje = "Hola, quiero hacer un pedido. Aquí está mi carrito:\n\n";
-    let totalGeneral = 0;
-
-    carrito.forEach((item, index) => {
-        let subtotal = item.precio * item.cantidad;
-        totalGeneral += subtotal;
-        mensaje += `${index + 1}. ${item.nombre} - ${item.cantidad}x S/ ${item.precio.toFixed(2)} = S/ ${subtotal.toFixed(2)}\n`;
+                // Mostrar el código CIP y las instrucciones para realizar el pago
+                alert("Genera tu código CIP: " + cipCode);
+                
+                // O puedes redirigir a una página de pago con las instrucciones del código CIP
+                // Por ejemplo:
+                window.location.href = "https://www.pagoefectivo.pe/consulta/" + cipCode;
+            } else {
+                alert("Hubo un error al generar el código CIP. Intenta nuevamente.");
+            }
+        },
+        error: function() {
+            alert("Error en la comunicación con el servidor de PagoEfectivo.");
+        }
     });
-
-    mensaje += `\nTotal a pagar: S/ ${totalGeneral.toFixed(2)}\n\n`;
-    mensaje += "*Chifería Arellano - Gracias por su preferencia* :)";
-
-    // Convertir mensaje a formato URL
-    let url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-
-    // Redirigir a WhatsApp
-    window.open(url, "_blank");
-}
+};
 
 
+// Cerrar el modal manualmente si el botón de cerrar no funciona
+document.getElementById("cerrarModal").onclick = function() {
+    $('#pedidoModal').modal('hide');  // Cerrar modal al hacer clic en el botón de cierre
+};
 
-// Cargar el carrito al iniciar
-document.addEventListener("DOMContentLoaded", actualizarCarrito);
+
+// *FIN DE NUEVO MODAL PARA PEDIR PEDIDO*

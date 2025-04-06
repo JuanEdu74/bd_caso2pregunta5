@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg d-flex justify-content-between align-items-center container">
             <!-- Logo y Título -->
             <div class="d-flex align-items-center gap-2">
-                <img src="images/encabezado/logo.png" alt="Chifería Deliciosa Logo" style="height: 50px;">
+                <img src="images/encabezado/logo2.png" alt="Chifería Deliciosa Logo" style="height: 50px;">
                 <h1 class="fs-5 m-0 text-nowrap">Página Oficial: Libro de Recetas Arellano</h1>
             </div>
     
@@ -45,11 +45,6 @@
     
             <!-- Opciones adicionales (Iniciar Sesión y Carrito) -->
             <div class="d-flex align-items-center gap-3">
-                <!-- Iniciar Sesión -->
-                <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1">
-                    <i class="bi bi-person"></i> <span class="fw-bold">INICIAR SESIÓN</span>
-                </a>
-            
                 <!-- Carrito de Compras -->
                 <a href="#" class="text-white text-decoration-none d-flex align-items-center gap-1" onclick="mostrarCarrito()">
                     <i class="bi bi-cart"></i> <span id="cart-total">S/ 0.00</span>
@@ -90,7 +85,7 @@
         <div id="carouselHero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-description="Libro Virtual Oficial: Recetas Exquisitas de la Chifería Arellano.">
-                    <img src="images/carouselhero/ch10.jpg" class="d-block w-100" alt="Portada del libro de recetas chifa">
+                    <img src="images/carouselhero/ch11.jpg" class="d-block w-100" alt="Portada del libro de recetas chifa">
                 </div>
                 <div class="carousel-item" data-description="Aprende a preparar el clásico Chijaukai con nuestra receta exclusiva.">
                     <img src="images/carouselhero/ch8.jpg" class="d-block w-100" alt="Chijaukai - receta paso a paso">
@@ -119,7 +114,7 @@
     <!-- INICIO DE EXPLORA NUESTRO MENU -->
 
     <section id="menu-carousel" class="container my-5">
-        <h2 class="text-center fw-bold">EXPLORA NUESTRAS PROMOCIONES Y MENÚ</h2>
+        <h2 class="text-center fw-bold">ENCONTRARÁS ESTAS RECETAS Y MÁS EN NUESTRO LIBRO OFICIAL</h2>
         <div id="menuCarousel" class="carousel slide" data-bs-ride="carousel">
             
             <!-- Contenido del Carrusel -->
@@ -128,19 +123,19 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/arrozchaufa.png" class="d-block w-100" alt="Arroz Chaufa">
+                            <img src="images/menu_carousel/nuevo5.png" class="d-block w-100" alt="Arroz Chaufa">
                             <p class="menu-title">Arroz Chaufa</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/chijaukai.png" class="d-block w-100" alt="Chijaukai">
+                            <img src="images/menu_carousel/nuevo6.png" class="d-block w-100" alt="Chijaukai">
                             <p class="menu-title">Chijaukai</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/tallarin_saltado.png" class="d-block w-100" alt="Tallarín Saltado">
+                            <img src="images/menu_carousel/nuevo7.png" class="d-block w-100" alt="Tallarín Saltado">
                             <p class="menu-title">Tallarín Saltado</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/kamlu_wantan.png" class="d-block w-100" alt="Kamlu Wantán">
+                            <img src="images/menu_carousel/nuevo8.png" class="d-block w-100" alt="Kamlu Wantán">
                             <p class="menu-title">Kamlu Wantán</p>
                         </div>
                     </div>                    
@@ -231,32 +226,37 @@
 
     <!-- FIN DE EXPLORA NUESTRO MENU -->
     
-    <!-- INICIO DE PROMOCIONES ESPECIALES -->
+    
+    <!-- INICIO DE CONTENIDO DEL LIBRO -->
 
-    <section id="promo" class="container py-4">
-        <div class="row align-items-center text-center bg-warning p-4 rounded">
-            <!-- Columna Izquierda: Texto de Promociones -->
-            <div class="col-md-6">
-                <h2>Promociones Especiales</h2>
-                <h4 id="promo-day"></h4>
-                <p id="promo-text">Ofertas exclusivas cada semana para nuestros clientes.</p>
+    <section id="contenido" class="container py-4">
+        <div class="row text-center bg-secondary p-4 rounded">
+            <div class="col-md-4 d-flex align-items-center">
+                <img src="images/encabezado/logo2.png" alt="Imagen descriptiva" class="img-fluid">
             </div>
-            <!-- Columna Derecha: Imagen -->
-            <div class="col-md-6">
-                <img id="promo-img" src="img/default.jpg" alt="Promoción del día" class="img-fluid rounded">
+            <div class="col-md-8">
+                <h2>¿Qué encontrarás en el libro de recetas virtual de Chifería Arellano?</h2>
+                <ul class="list-unstyled fs-5 text-light">
+                    <li style="text-align: left;">✔️ Más de 30 recetas deliciosas y variadas: Desde platos tradicionales hasta propuestas innovadoras.</li>
+                    <li style="text-align: left;">✔️ Consejos expertos de preparación y sustituciones: Cada receta incluye recomendaciones para adaptar ingredientes, técnicas y tiempos de cocción.</li>
+                    <li style="text-align: left;">✔️ Fotografías de alta calidad: Imágenes vibrantes y detalladas que te inspiran y guían.</li>
+                    <li style="text-align: left;">✔️ Acceso desde cualquier dispositivo: Lleva este libro digital a donde quieras.</li>
+                    <li style="text-align: left;">✔️ Recetas pensadas para todos los gustos: Sabores tradicionales o experimentar: este libro tiene algo para ti.</li>
+                    <li style="text-align: left;">✔️ Interactividad y actualizaciones constantes: Siempre estamos añadiendo algo nuevo para mantener tu experiencia fresca.</li>
+                </ul>                
             </div>
         </div>
     </section>
     
     
-
-    <!-- FIN DE PROMOCIONES ESPECIALES -->
     
+    
+    <!-- FIN DE CONTENIDO DEL LIBRO -->
 
     <!-- INICIO TESTIMONIOS -->
 
     <section id="testimonios" class="container my-5">
-        <h2 class="text-center">Lo que dicen nuestros clientes</h2>
+        <h2 class="text-center">Lo que dicen nuestros clientes sobre el libro de recetas</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="card p-3 text-center">
@@ -266,7 +266,7 @@
                         ★★★★★
                     </p>
                     <blockquote class="blockquote">
-                        <p>"Excelente servicio y platillos de calidad. Sin duda volveré a comprar aquí."</p>
+                        <p>"¡Me encantó el libro! Las recetas son fáciles de seguir, y la variedad es increíble. Cada platillo que he probado ha sido un éxito en casa. ¡Lo recomiendo totalmente!"</p>
                     </blockquote>
                 </div>
             </div>
@@ -278,7 +278,7 @@
                         ★★★★★
                     </p>
                     <blockquote class="blockquote">
-                        <p>"Atención rápida, personalizada y deliciosa. Muy satisfecha con mi experiencia."</p>
+                        <p>"Compré el libro para sorprender a mi familia con platos nuevos y tradicionales, y la experiencia ha sido fantástica. Las fotos y consejos son muy útiles. ¡Definitivamente vale cada centavo!"</p>
                     </blockquote>
                 </div>
             </div>
@@ -292,7 +292,7 @@
                         ★★★★★
                     </p>
                     <blockquote class="blockquote">
-                        <p>"Una experiencia inigualable, la calidad y el servicio superaron mis expectativas."</p>
+                        <p>"El libro ha superado mis expectativas. Las recetas son fáciles de seguir y tienen un toque único. ¡Ya he probado varias y me han quedado deliciosas!"</p>
                     </blockquote>
                 </div>
             </div>
@@ -300,20 +300,63 @@
     </section>
     
     
+    
 
     <!-- FIN TESTIMONIOS -->
 
-    <section id="contacto" class="text-center py-5 bg-light">
-        <h2>Contáctanos</h2>
-        <p>Haz tu pedido llamando al <strong>+51 955 786 062</strong> o visitándonos en nuestra dirección.</p>
-    </section>
+    <!-- INICIO PEDIDO -->
 
+    <section id="pedido" class="container my-4 p-5 rounded" style="background-color: #8B5E3C;">
+        <h2 class="text-center text-white">¡Pide tu libro virtual de recetas de Chifería Arellano ahora!</h2>
+        <p class="fs-5 text-center text-white mb-4">¡Transforma tu cocina con más de 30 recetas deliciosas! Accede a tu libro digital de recetas por un precio increíble.</p>
+        
+        <div class="text-center my-4">
+            <img src="images/encabezado/logo2.png" alt="Logo Chifería Arellano" class="img-fluid" width="200">
+        </div>
+        
+        <div class="alert alert-danger my-4 text-center" role="alert">
+            <strong>¡Oferta por tiempo limitado!</strong> El libro tiene un valor de <del>50 soles</del>, pero ahora lo puedes obtener por <strong>solo 25 soles</strong> ¡No dejes pasar esta oportunidad!
+        </div>
+        
+        <p class="fs-4 text-center text-white mb-4">¡Haz tu pedido ahora y empieza a disfrutar de las mejores recetas de la Chifería Arellano directamente desde tu dispositivo!</p>
+        
+        <!-- Botón para abrir el modal -->
+        <div class="text-center">
+            <button id="abrirModal" class="btn btn-warning btn-lg">Comprar Ahora</button>
+        </div>
+    </section>
     
+    
+    
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="pedidoModal" tabindex="-1" role="dialog" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pedidoModalLabel">Opciones para obtener tu libro</h5>
+                    <button type="button" class="close" id="cerrarModal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Selecciona cómo deseas recibir tu libro:</p>
+                    <button id="whatsappBtn" class="btn btn-success btn-block">Pedir por WhatsApp</button>
+                    <button id="pagoEfectivoBtn" class="btn btn-warning btn-block">Comprar por Pagoefectivo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- FIN PEDIDO -->
 
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2025 Chifería Arellano - Todos los derechos reservados.</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/whatsapp.js"></script>
