@@ -17,7 +17,7 @@
             <!-- Logo y Título -->
             <div class="d-flex align-items-center gap-2">
                 <img src="images/encabezado/logo.png" alt="Chifería Deliciosa Logo" style="height: 50px;">
-                <h1 class="fs-5 m-0 text-nowrap">Bienvenidos a Chifería Arellano</h1>
+                <h1 class="fs-5 m-0 text-nowrap">Página Oficial: Libro de Recetas Arellano</h1>
             </div>
     
             <!-- Botón responsive -->
@@ -29,23 +29,17 @@
             <div class="collapse navbar-collapse justify-content-center" id="menuNav">
                 <ul class="navbar-nav gap-3">
                     <li class="nav-item">
-                        <a href="#menu" class="nav-link text-white fs-6">Menú</a>
+                        <a href="#libro" class="nav-link text-white fs-6">Sobre el Libro</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#locales" class="nav-link text-white fs-6">Locales</a>
+                        <a href="#muestras" class="nav-link text-white fs-6">Recetas de Muestra</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#nosotros" class="nav-link text-white fs-6">Sobre Nosotros</a>
+                        <a href="#descarga" class="nav-link text-white fs-6">Descargar</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white fs-6" id="submenuContacto" role="button" data-bs-toggle="dropdown">
-                            Delivery
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#telefono">Teléfono</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="enviarPedidoWhatsApp()">WhatsApp</a></li>
-                        </ul>
-                    </li>                    
+                    <li class="nav-item">
+                        <a href="#historia" class="nav-link text-white fs-6">Chifería Arellano</a>
+                    </li>                         
                 </ul>
             </div>
     
@@ -95,16 +89,16 @@
     <section id="hero" class="text-center py-5 bg-light">
         <div id="carouselHero" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-description="Chaufa: Clásico arroz frito chifa con huevo, sillao y proteínas.">
-                    <img src="images/carouselhero/ch7.jpg" class="d-block w-100" alt="Plato chifa 1">
+                <div class="carousel-item active" data-description="Libro Virtual Oficial: Recetas Exquisitas de la Chifería Arellano.">
+                    <img src="images/carouselhero/ch10.jpg" class="d-block w-100" alt="Portada del libro de recetas chifa">
                 </div>
-                <div class="carousel-item" data-description="Chijaukai: Pollo frito con maicena y salsa de ostión.">
-                    <img src="images/carouselhero/ch8.jpg" class="d-block w-100" alt="Plato chifa 2">
+                <div class="carousel-item" data-description="Aprende a preparar el clásico Chijaukai con nuestra receta exclusiva.">
+                    <img src="images/carouselhero/ch8.jpg" class="d-block w-100" alt="Chijaukai - receta paso a paso">
                 </div>
-                <div class="carousel-item" data-description="Limonkay: Pollo empanizado con salsa agridulce de limón.">
-                    <img src="images/carouselhero/ch9.jpg" class="d-block w-100" alt="Plato chifa 3">
+                <div class="carousel-item" data-description="Descubre el auténtico sabor del Chijaukai en nuestro libro virtual.">
+                    <img src="images/carouselhero/ch9.jpg" class="d-block w-100" alt="Chijaukai servido - receta del libro">
                 </div>
-            </div>
+            </div>            
             <!-- Botones de navegación -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -115,9 +109,9 @@
         </div>
     
         <!-- Descripción dinámica -->
-        <div id="carouselDescription" class="py-3 bg-white text-dark fw-bold">
-            Chaufa: Clásico arroz frito chifa con huevo, sillao y proteínas.
-        </div>
+        <div id="carouselDescription" class="py-3 bg-white text-dark fw-bold text-center">
+            Libro Virtual de Recetas - Chifería Arellano
+        </div>        
     </section>
 
     <!-- Fin Ruleta -->
@@ -134,22 +128,22 @@
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/cyber.png" class="d-block w-100" alt="Cyber Chinawok">
-                            <p class="menu-title">Cyber Arellano</p>
+                            <img src="images/menu_carousel/arrozchaufa.png" class="d-block w-100" alt="Arroz Chaufa">
+                            <p class="menu-title">Arroz Chaufa</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/promociones.png" class="d-block w-100" alt="Promociones">
-                            <p class="menu-title">Promociones</p>
+                            <img src="images/menu_carousel/chijaukai.png" class="d-block w-100" alt="Chijaukai">
+                            <p class="menu-title">Chijaukai</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/combos.png" class="d-block w-100" alt="Combos Personales">
-                            <p class="menu-title">Combos Personales</p>
+                            <img src="images/menu_carousel/tallarin_saltado.png" class="d-block w-100" alt="Tallarín Saltado">
+                            <p class="menu-title">Tallarín Saltado</p>
                         </div>
                         <div class="col-md-3">
-                            <img src="images/menu_carousel/clasicos.png" class="d-block w-100" alt="Clásicos">
-                            <p class="menu-title">Clásicos</p>
+                            <img src="images/menu_carousel/kamlu_wantan.png" class="d-block w-100" alt="Kamlu Wantán">
+                            <p class="menu-title">Kamlu Wantán</p>
                         </div>
-                    </div>
+                    </div>                    
                 </div>
     
                 <!-- Segunda diapositiva (puedes agregar más elementos aquí si hay más categorías) -->
